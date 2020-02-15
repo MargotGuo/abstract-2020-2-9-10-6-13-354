@@ -13,9 +13,9 @@ public class Main {
     Transportation car = new Car();
     Transportation bus = new Bus();
 
-    System.out.printf("Xiao Ming %s choose aircraft.\n", aircraft.isEnough(totalMoney) ? "can" : "cannot");
-    System.out.printf("Xiao Ming %s choose train.\n", train.isEnough(totalMoney) ? "can" : "cannot");
-    System.out.printf("Xiao Ming %s choose car.\n", car.isEnough(totalMoney) ? "can" : "cannot");
-    System.out.printf("Xiao Ming %s choose bus.\n", bus.isEnough(totalMoney) ? "can" : "cannot");
+    System.out.printf("Xiao Ming %s choose aircraft.\n", totalMoney >= aircraft.getPrice() ? "can" : "cannot");
+    System.out.printf("Xiao Ming %s choose train.\n", totalMoney >= train.getPrice() ? "can" : "cannot");
+    System.out.printf("Xiao Ming %s choose car.\n", totalMoney >= car.getPrice() ? "can" : "cannot");
+    System.out.printf("Xiao Ming %s choose bus.\n", totalMoney >= bus.getPrice() ? "can" : "cannot");
   }
 }

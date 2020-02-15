@@ -2,7 +2,7 @@ package transport;
 
 public class Aircraft implements Transportation {
   @Override
-  public boolean isEnough(int money) {
-    return money >= 1000;
+  public int getPrice() {
+    return 1000;
   }
 }
