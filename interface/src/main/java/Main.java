@@ -4,18 +4,20 @@ import transport.Car;
 import transport.Train;
 import transport.Transportation;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
   public static void main(String[] args) {
     int totalMoney = 300;
+    List<Transportation> transportationList = Arrays.asList(new Aircraft(), new Train(), new Car(), new Bus());
+    transportationList.forEach(transportation -> printResult(transportation, totalMoney));
+  }
 
-    Transportation aircraft = new Aircraft();
-    Transportation train = new Train();
-    Transportation car = new Car();
-    Transportation bus = new Bus();
-
-    System.out.printf("Xiao Ming %s choose aircraft.\n", totalMoney >= aircraft.getPrice() ? "can" : "cannot");
-    System.out.printf("Xiao Ming %s choose train.\n", totalMoney >= train.getPrice() ? "can" : "cannot");
-    System.out.printf("Xiao Ming %s choose car.\n", totalMoney >= car.getPrice() ? "can" : "cannot");
-    System.out.printf("Xiao Ming %s choose bus.\n", totalMoney >= bus.getPrice() ? "can" : "cannot");
+  private static void printResult(Transportation transportation, int totalMoney) {
+    System.out.printf("$%s %s enough for %s.\n",
+        totalMoney,
+        totalMoney >= transportation.getPrice() ? "is" : "is not",
+        transportation.getClass().getSimpleName());
   }
 }
